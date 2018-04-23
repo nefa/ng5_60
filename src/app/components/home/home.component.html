@@ -1,0 +1,26 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>Add a bucket list item</p>
+  </div>
+
+  <div class="col">
+    <span>({{list.length}}) items</span>
+    <p>Your bucket list</p>
+  </div>
+</div>
+
+<div class="container color-light">
+  <div class="col">
+    <p>Use form:</p>
+
+    <form>
+      title:<input type="text" name="itemTitle"[(ngModel)]="item.title">
+      short description:  <input type="text" name="itemDescription" [(ngModel)]="item.description">
+      <input type="submit" value="add" (click)="addItem()">
+    </form>
+  </div>
+
+  <div class="col">
+    <p class="life-container">example of list item here</p>
+  </div>
+</div>
