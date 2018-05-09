@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<div class="container color-light">
+<div class="container color-light" [@list]="list.length">
   <div class="col">
     <p>Use form:</p>
 
@@ -21,6 +21,14 @@
   </div>
 
   <div class="col">
-    <p class="life-container">example of list item here</p>
+    <p class="life-container" *ngFor="let item of list; let i = index">
+      <span>
+        {{item.title}} 
+      </span>
+      <span> 
+        {{item.description}} 
+      </span>
+      <span (click)="removeItem(i)">[x]</span>
+    </p>
   </div>
 </div>

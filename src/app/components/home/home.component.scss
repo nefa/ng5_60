@@ -1,0 +1,17 @@
+.container {
+    display: grid;
+    grid-template-columns: 50%;
+}
+
+.col {
+    padding: .4em 1.3em;
+}
+
+input.btn {
+    border:0;
+}
+
+.life-container {
+    cursor: pointer;
+    font-weight: bold;
+}
