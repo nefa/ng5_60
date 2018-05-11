@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {trigger, style, transition, keyframes, animate, query, stagger} from '@angular/animations';
 
-interface item {
+import { DataService } from '../../services/data.service'
+
+export interface item {
   title: string;
   description: string;
 };
@@ -46,20 +48,25 @@ export class HomeComponent implements OnInit {
   };
   list:item[] = [];
 
-  constructor() { }
+  constructor(private dataService$:DataService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dataService$.simpleItem.subscribe(list => this.list = list); //populate local list
+    this.dataService$.changeItemsList(this.list); // notify other components of the new state
+  }
 
   addItem() {
     this.list.push(this.item);
     this.item = {
       title: '',
       description: ''
-    }    
+    }
+    this.dataService$.changeItemsList(this.list); // notify other components of the new state
   }
 
   removeItem(index) {
     this.list.splice(index, 1);
+    this.dataService$.changeItemsList(this.list); // notify other components of the new state
   }
 
 }

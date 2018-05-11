@@ -1,1 +1,10 @@
 <div>about cpt</div>
+<p> some about text</p>
+
+<button (click)="navigate()">back to home</button>
+<ul>
+    <li *ngFor="let item of list">
+        <span>{{item.title}}</span>
+        <span>{{item.description}}</span>
+    </li>
+</ul>

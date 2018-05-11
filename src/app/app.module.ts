@@ -5,6 +5,8 @@ import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { DataService } from './services/data.service'
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
@@ -22,7 +24,7 @@ import { AboutComponent } from './components/about/about.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ DataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
